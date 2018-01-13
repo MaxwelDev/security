@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class GpController {
 
+    @RequestMapping(method = RequestMethod.GET, path = "/entrar")
+    public String entrar() {
+        return "entrar";
+    }
+
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String inicio() {
         return "inicio";
