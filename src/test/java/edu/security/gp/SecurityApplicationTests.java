@@ -1,4 +1,4 @@
-package edu.security.security;
+package edu.security.gp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

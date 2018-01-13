@@ -1,4 +1,4 @@
-package edu.security.security;
+package edu.security.gp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
