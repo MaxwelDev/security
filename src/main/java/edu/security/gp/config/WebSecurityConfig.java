@@ -40,22 +40,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .rememberMe()
                     .userDetailsService(userDetailsService);
 
-             http
-                .sessionManagement()
+        http.sessionManagement()
                 .maximumSessions(1)
                 .maxSessionsPreventsLogin(true)
+                .expiredUrl("/entrar")
                 .sessionRegistry(sessionRegistry());
     }
 
     @Bean
-    public SessionRegistry sessionRegistry() {
-        SessionRegistry sessionRegistry = new SessionRegistryImpl();
-        return sessionRegistry;
+    SessionRegistry sessionRegistry() {
+        return new SessionRegistryImpl();
     }
 
     // Register HttpSessionEventPublisher
     @Bean
-    public static ServletListenerRegistrationBean httpSessionEventPublisher() {
+    public static ServletListenerRegistrationBean httpSessionEventPublisher() {	//(5)
         return new ServletListenerRegistrationBean(new HttpSessionEventPublisher());
     }
 }
